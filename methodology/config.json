@@ -123,6 +123,7 @@
       "Qualifying": 0.10,
       "V2 Review/Demo": 0.35,
       "Decision-Maker Buy-In": 0.50,
+      "Quote Requested": 0.60,
       "Quote Sent": 0.65,
       "Committed": 0.80,
       "PO Received": 0.90,
@@ -133,10 +134,11 @@
     },
     "unmapped_early_verify_note": "Provisional 20% applied to deals sitting in an unmapped stage with no spine label (New Business-Texas stage 3879394040 — Tomball, San Benito, Lovejoy, ~$22K). This is a DATA-QUALITY placeholder, not a real stage weight. Correct these deals' stage in HubSpot and the placeholder disappears.",
     "quote_requested_stage": {
-      "status": "UNRESOLVED — needs Jan's confirmation",
+      "status": "RESOLVED — Jan set 0.60, 2026-06-24.",
       "added": "2026-06-24",
-      "weight": null,
-      "recommendation": "Quote Requested logically sits between Decision-Maker Buy-In (0.50) and Quote Sent (0.65) — a customer has asked for a quote but it has not yet been sent. Suggest ~0.55–0.60 pending Jan's decision. Do NOT apply a weight until Jan confirms. Jan's existing dashboards (through 2026-06-24) do not yet use this stage."
+      "weight": 0.60,
+      "position": "Between Decision-Maker Buy-In (0.50) and Quote Sent (0.65) — customer has asked for a quote but it has not yet been sent.",
+      "action_for_zig": "Apply 0.60 to the Quote Requested stage across whichever revenue pipelines carry it. Stage IDs were not yet captured at documentation time — re-pull from REST /crm/v3/pipelines/deals and add them to stage_ids_by_pipeline before automating."
     },
     "divergence_flag": {
       "status": "RESOLVED — Jan ratified the dashboard weights as canonical, 2026-06-24.",
@@ -241,7 +243,7 @@
     "2 renewals with no close date: Copperas Cove, Erath Excels.",
     "Krum renewal $0 — valid, do not flag.",
     "OOS stage IDs unreliable via API — all 3 real deals forced to earliest stage label.",
-    "'Quote Requested' stage added 2026-06-24 — weighting unresolved."
+    "'Quote Requested' stage added 2026-06-24 — weighted 0.60 (resolved); capture per-pipeline stage IDs from REST."
   ],
   "refresh_process": {
     "current": "Manual. Jan asks her Claude Desktop to pull live HubSpot data via the HubSpot MCP and rebuild the three HTML dashboards on demand (typically before pipeline/renewal meetings). No fixed schedule; triggered by Jan. Weekly Thursday renewals report to Steve + Michelle (cashflow focus, lead with Committed + banked).",

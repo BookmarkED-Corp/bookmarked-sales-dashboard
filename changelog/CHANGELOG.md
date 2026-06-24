@@ -15,6 +15,11 @@ Next run: date/time
 ## Log
 
 ### [2026-06-24] — METHODOLOGY_CHANGE
+**Summary:** "Quote Requested" stage weighting set to 60% by Jan.
+**Details:** Open Item 2 closed. New stage (added 6/24) sits between Decision-Maker Buy-In (50%) and Quote Sent (65%); weighted 0.60. Updated `config.json` (weights_by_stage_label + quote_requested_stage → RESOLVED) and `METHODOLOGY.md` §3. Mechanical follow-up for Zig: capture the stage's per-pipeline stage IDs from REST and add to stage_ids_by_pipeline. No open methodology items remain.
+**Next run:** Zig's first automated run, after aligning HubSpot win-probs to the canonical weights (incl. 60% Quote Requested) and capturing the new stage IDs.
+
+### [2026-06-24] — METHODOLOGY_CHANGE
 **Summary:** Weight divergence RESOLVED — Jan ratified the dashboard weights (10/35/50/65/80/90) as canonical.
 **Details:** Open Item 1 closed. The dashboard stage weights are the source of truth (they produced the published $738,991 weighted forecast). Zig must set HubSpot's `hs_deal_stage_probability` on every stage to MATCH these across all 6 revenue pipelines — NOT adopt the lower stored HubSpot probs (10/25/40/60/85/95) and NOT re-baseline the forecast. Updated `config.json` (divergence_flag → status RESOLVED + action_for_zig) and `METHODOLOGY.md` §3. "Quote Requested" weighting (Open Item 2) remains open pending Jan.
 **Next run:** Zig's first automated run, after he aligns HubSpot win-probs to the canonical weights and Jan sets the "Quote Requested" weight.

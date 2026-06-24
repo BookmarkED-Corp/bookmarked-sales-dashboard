@@ -16,7 +16,7 @@
 3. Map each open deal's stage to a **weight** (§3) and run the **5 formulas** (§5).
 4. Honor the **edge cases** (§8) — Conroe multi-year, $0 consortium, Krum $0, no-close-date deals.
 5. There are **no external data sources** feeding the numbers — HubSpot only (§6).
-6. **Two open items before you go live:** (a) reconcile the dashboard-weights-vs-HubSpot-win-probs divergence (§3), and (b) get Jan to assign a weight to the new "Quote Requested" stage (§3).
+6. **Both prior open items are now resolved (§3):** dashboard weights are canonical (align HubSpot to them), and "Quote Requested" = 60%. Remaining mechanical step for Zig: capture the "Quote Requested" per-pipeline stage IDs from REST.
 
 ---
 
@@ -76,6 +76,7 @@ The 6 revenue pipelines share the same 9-stage spine (labels + order). **Jan's C
 | Qualifying | **10%** | Earliest customer-action stage. |
 | V2 Review/Demo | **35%** | Demo + V2 review (same moment). |
 | Decision-Maker Buy-In | **50%** | DM sold on value. |
+| Quote Requested | **60%** | Customer asked for a quote; not yet sent. Added & weighted 2026-06-24. |
 | Quote Sent | **65%** | Quote delivered to customer. |
 | Committed | **80%** | Customer verbal/written "yes, moving forward" / district confirmed renewing. |
 | PO Received | **90%** | PO in hand; contract awaiting counter-signature (the 60–90 day cycle lives here). |
@@ -103,9 +104,9 @@ Jan's dashboards and HubSpot's stored win-probs were **not the same**:
 
 **Decision (Jan, 2026-06-24):** keep the **dashboard weights** as canonical — they produced the published **$738,991 weighted forecast**. **Action for Zig:** set HubSpot's `hs_deal_stage_probability` on every stage to **match the dashboard weights** across all 6 revenue pipelines. Do **not** adopt the lower stored HubSpot probs and do **not** re-baseline the forecast to them. The dashboard table is the source of truth; HubSpot gets aligned to it.
 
-### ⚠️ OPEN ITEM 2 — "Quote Requested" stage (added 2026-06-24)
+### ✅ RESOLVED — "Quote Requested" stage (Jan set 60%, 2026-06-24)
 
-A new "Quote Requested" stage was added 2026-06-24. Jan's existing dashboards (through 6/24) do **not** yet use it. **Weighting unresolved.** Recommendation: it sits between Decision-Maker Buy-In (50%) and Quote Sent (65%) — suggest ~55–60% — but **do not apply a weight until Jan confirms.**
+The "Quote Requested" stage added 2026-06-24 is weighted **60%** — it sits between Decision-Maker Buy-In (50%) and Quote Sent (65%) (customer asked for a quote, not yet sent). **Action for Zig:** apply 0.60 to this stage; capture its per-pipeline stage IDs from REST and add them to the stage-ID maps before automating.
 
 ---
 
@@ -215,7 +216,7 @@ Some narrative annotations reference outside context (e.g. "ILTexas ~$1.27M unsp
 | No close date | Copperas Cove, Erath Excels | Can't enter best-case. |
 | Krum renewal $0 | 1 | Valid — do not flag. |
 | OOS stage IDs unreliable via API | 3 OOS deals | Forced to earliest stage label. |
-| "Quote Requested" stage added 6/24 | — | Weighting unresolved (Open Item 2). |
+| "Quote Requested" stage added 6/24 | — | Weighted 60% (resolved 6/24). Capture per-pipeline stage IDs from REST. |
 
 ---
 
