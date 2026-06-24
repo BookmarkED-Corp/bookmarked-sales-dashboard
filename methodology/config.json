@@ -1,61 +1,267 @@
 {
   "version": "1.0.0",
-  "last_updated": "PENDING — to be populated by Jan's Claude",
-  "owner": "Zig — CRO Agent",
+  "last_updated": "2026-06-24",
+  "documented_by": "Jan's Claude (one-time methodology export)",
+  "owner": "Zig — CRO Agent, Bookmarked Hermes Fleet",
+  "source_of_truth": "HubSpot portal 39855019. All dashboard numbers are computed from live HubSpot deal data. No external spreadsheet, Google Sheet, or manual file feeds any calculation.",
+  "fiscal_year": {
+    "start": "2025-09-01",
+    "end": "2026-08-31",
+    "label": "FY26 (Sept 1, 2025 – Aug 31, 2026)",
+    "confirmed": true
+  },
+  "goal": {
+    "name": "$1M banked by Sept 1, 2026",
+    "target_amount": 1000000,
+    "basis": "Banked (Closed-Won) across all revenue pipelines since 2025-09-01",
+    "in_window_cutoff_date": "2026-09-01",
+    "notes": "Only deals whose HubSpot close date lands before Sept 1, 2026 count toward the in-window / best-case math. FY27 deals (e.g. Utah, Levy) are real book but excluded from this goal."
+  },
   "pipelines": {
     "new_business_texas": {
       "pipeline_id": "default",
       "name": "New Business — Texas",
-      "include": true,
-      "notes": "Primary Texas new business pipeline"
+      "include_in_dashboard": true,
+      "counts_toward_1m_goal": true,
+      "motion": "net-new",
+      "notes": "Primary Texas net-new pipeline. Source for the Deal Working dashboard."
     },
     "renewals_2627": {
       "pipeline_id": "798674460",
       "name": "26/27 Renewals",
-      "include": true,
-      "notes": "All renewal deals for 26/27 school year"
+      "include_in_dashboard": true,
+      "counts_toward_1m_goal": true,
+      "motion": "renewal",
+      "notes": "All paid 26/27 renewal deals. Source for the Renewals dashboard. Excludes ESC consortium ($0) renewals — those live in the separate Consortium pipeline."
     },
     "new_business_out_of_state": {
       "pipeline_id": "67437740",
       "name": "New Business — Out of State",
-      "include": true,
-      "notes": "Non-Texas new business. NOTE: Utah SEA ($1.3M) parked here — not working pipeline"
+      "include_in_dashboard": true,
+      "counts_toward_1m_goal": "partial",
+      "motion": "net-new",
+      "notes": "Added to the dashboard 2026-06-22. Only in-window deals (close date < 2026-09-01) count toward the goal. As of 2026-06-24 that is Fort Vermilion AB ($6,148) only. Utah SEA ($1,312,622, Jan 2027) and Levy County FL ($15,000, Mar 2027) are FY27 — real book, excluded from the Sept-1 goal. OOS stage IDs are NOT reliably exposed via the API; all three real deals are shown in the earliest stage labeled 'Qualifying (OOS — verify)'. Re-pull stage IDs from REST before trusting OOS stage placement (one observed: 131248191)."
+    },
+    "renewals_consortium": {
+      "pipeline_id": "2365820611",
+      "name": "Renewals — Consortium",
+      "include_in_dashboard": false,
+      "counts_toward_1m_goal": false,
+      "motion": "renewal",
+      "notes": "~25+ ESC 9/15/16 child districts, currently $0. Excluded from all three dashboards. ~59 active $0 consortium districts renewed 25/26 but have no 26/27 deal — that is a known migration/structure gap (Nathan/ESC 16 decision), NOT a data error. Never treat 'no 26/27 deal' as 'not a customer'."
+    },
+    "renewals_testing_pilot": {
+      "pipeline_id": "2366316271",
+      "name": "Renewals — Testing & Pilot",
+      "include_in_dashboard": false,
+      "counts_toward_1m_goal": false,
+      "motion": "renewal",
+      "notes": "Test/pilot records. Excluded from all calculations."
+    },
+    "new_business_testing": {
+      "pipeline_id": "41834638",
+      "name": "New Business — Testing",
+      "include_in_dashboard": false,
+      "counts_toward_1m_goal": false,
+      "motion": "net-new",
+      "notes": "Old sandbox pipeline polluted with 2023 'Testing:' junk now showing as Closed Lost (~$366K) / Closed Won (~$81K incl. 'Testing: Abilene' $61K). ALWAYS excluded from banked. Archive these test records."
+    },
+    "esc_partnerships": {
+      "pipeline_id": "61762106",
+      "name": "ESC Partnerships",
+      "include_in_dashboard": false,
+      "counts_toward_1m_goal": false,
+      "motion": "partnership (ILA/PD, not quote->PO->close)",
+      "notes": "Separate partnership-native motion. Not part of the revenue forecast. Stages: Initial Discussion 121094251 -> Qualified to Partner 121094252 -> Meeting Scheduled 121094253 -> Verbal Commitment to Partner 121094254 -> Contract sent 121094255 -> Closed Won 121094256 -> Closed Lost 121094257."
+    },
+    "renewals_2728": {
+      "pipeline_id": "2231817917",
+      "name": "27/28 Renewals",
+      "include_in_dashboard": false,
+      "counts_toward_1m_goal": false,
+      "motion": "renewal",
+      "notes": "FY28 renewals + multi-year Year-N PO-tracking deals (e.g. Conroe Year 2). NOT migrated to the new shared spine — still old stages. Excluded from the Sept-1 goal."
+    },
+    "renewals_2526_historical": {
+      "pipeline_id": "688408429",
+      "name": "25/26 Renewals (historical)",
+      "include_in_dashboard": false,
+      "counts_toward_1m_goal": false,
+      "motion": "renewal",
+      "notes": "Historical/closed. Closed/Won stage 1008389048, Churn stage 1008389049. Use to identify the $0 consortium customer base, not for forecast. NOT migrated to new spine."
+    },
+    "renewals_2425_historical": {
+      "pipeline_id": "98147764",
+      "name": "24/25 Renewals (historical)",
+      "include_in_dashboard": false,
+      "counts_toward_1m_goal": false,
+      "motion": "renewal",
+      "notes": "Historical/closed. NOT migrated to new spine."
     }
+  },
+  "deal_properties_queried": {
+    "dealname": "Display name. Naming convention for renewals: 'YY/YY RENEWAL | District Name [optional suffix]'; multi-year appends '(Year N of Nyr MY)'.",
+    "amount": "Deal dollar value. Renewal amounts are intentionally conservative (NOT bumped to $3/student) — pricing flex preserved.",
+    "closedate": "Expected/actual close date. Drives banked (must be >= 2025-09-01 and stage = Closed Won) and best-case (open deal close date < 2026-09-01).",
+    "dealstage": "Stage ID — mapped to a weight via the stage_weightings table below. Stage IDs differ per pipeline.",
+    "pipeline": "Pipeline ID — determines which pipeline a deal belongs to.",
+    "hubspot_owner_id": "Owner. Mapped to names via owner_ids table. Always map from verified IDs; never infer from context.",
+    "dealtype": "CFO (Michelle) owns this per-deal. Enum: New Business, Existing Business, Pilot, Consortium, Testing, Region Center Partnership. Used for the 'Testing' exclusion. Do NOT change its options.",
+    "hs_deal_stage_probability": "HubSpot's own stored win-probability per stage. NOTE: Jan's dashboards do NOT use this field — they apply the fixed stage_weightings table below. The two diverge (see stage_weightings.divergence_flag)."
+  },
+  "owner_ids": {
+    "479487253": "Steve Wandler (steve@bookmarked.com)",
+    "436425345": "Teela Watson (teela@bookmarked.com)",
+    "83343072": "Jan Gilboy (jan@bookmarked.com)",
+    "83027884": "Natasha Flanders (natasha@bookmarked.com)",
+    "81631149": "Patrick Reid",
+    "681243224": "Michelle Rogers"
   },
   "stage_weightings": {
-    "PENDING": "To be confirmed by Jan's Claude — do not use defaults until confirmed",
-    "known_weightings": {
-      "qualifying": 0.10,
-      "v2_review_demo": 0.35,
-      "decision_maker_buyin": 0.50,
-      "quote_sent": 0.65,
-      "committed": 0.80,
-      "po_received": 0.90,
-      "closed_won": 1.0,
-      "closed_lost": 0.0,
-      "parked_revisit": 0.0,
-      "quote_requested": "PENDING — new stage added 2026-06-24, weighting TBC with Jan"
+    "description": "Fixed win-probability weights Jan's Claude applies to each open deal for the Weighted Forecast. Keyed by stage label (consistent across the 6 revenue pipelines). Stage IDs differ per pipeline — see stage_ids_by_pipeline.",
+    "weights_by_stage_label": {
+      "Qualifying": 0.10,
+      "V2 Review/Demo": 0.35,
+      "Decision-Maker Buy-In": 0.50,
+      "Quote Sent": 0.65,
+      "Committed": 0.80,
+      "PO Received": 0.90,
+      "Closed Won": 1.00,
+      "Closed Lost": 0.00,
+      "Parked/Revisit": 0.00,
+      "unmapped_early_verify": 0.20
+    },
+    "unmapped_early_verify_note": "Provisional 20% applied to deals sitting in an unmapped stage with no spine label (New Business-Texas stage 3879394040 — Tomball, San Benito, Lovejoy, ~$22K). This is a DATA-QUALITY placeholder, not a real stage weight. Correct these deals' stage in HubSpot and the placeholder disappears.",
+    "quote_requested_stage": {
+      "status": "UNRESOLVED — needs Jan's confirmation",
+      "added": "2026-06-24",
+      "weight": null,
+      "recommendation": "Quote Requested logically sits between Decision-Maker Buy-In (0.50) and Quote Sent (0.65) — a customer has asked for a quote but it has not yet been sent. Suggest ~0.55–0.60 pending Jan's decision. Do NOT apply a weight until Jan confirms. Jan's existing dashboards (through 2026-06-24) do not yet use this stage."
+    },
+    "divergence_flag": {
+      "issue": "Jan's dashboard weights differ from the live win-probabilities Zig set inside HubSpot during the 2026-06-22 restructure.",
+      "jan_dashboard_weights": "0.10 / 0.35 / 0.50 / 0.65 / 0.80 / 0.90 / 1.00 / 0.00 / 0.00",
+      "zig_hubspot_win_probs": "0.10 / 0.25 / 0.40 / 0.60 / 0.85 / 0.95 / 1.00 / 0.00 / 0.10",
+      "stage_order": "Qualifying / V2 Review/Demo / Decision-Maker Buy-In / Quote Sent / Committed / PO Received / Closed Won / Closed Lost / Parked/Revisit",
+      "resolution": "These tables MUST be reconciled before Zig automates, or banked+weighted numbers will not match Jan's published dashboards. Jan's dashboard table (this config) is what produced the published $738,991 weighted forecast. Recommend Zig either (a) adopt Jan's dashboard weights as canonical, or (b) get Jan to ratify the HubSpot win-probs and re-baseline. Flag to Jan via Slack."
     }
   },
-  "exclusion_rules": {
-    "PENDING": "To be confirmed by Jan's Claude",
-    "known_exclusions": [
-      "dealtype = Testing",
-      "amount = $0 (review case by case — some $0 are valid consortium deals)",
-      "Utah SEA deal — parked, not working pipeline, exclude from weighted forecast",
-      "Duplicate deals (e.g. Jefferson County FL has two records — confirm which is canonical)"
-    ]
+  "stage_ids_by_pipeline": {
+    "renewals_2627": {
+      "Qualifying": "1172161286",
+      "V2 Review/Demo": "3577701096",
+      "Decision-Maker Buy-In": "1172161287",
+      "Quote Sent": "1172161288",
+      "Committed": "3755871958",
+      "PO Received": "1172161289",
+      "Closed Won": "1172161290",
+      "Closed Lost": "1172161292",
+      "Parked/Revisit": "3583616757"
+    },
+    "new_business_texas": {
+      "Qualifying": "presentationscheduled",
+      "V2 Review/Demo": "979770642",
+      "Decision-Maker Buy-In": "decisionmakerboughtin",
+      "Quote Sent": "contractsent",
+      "Committed": "232657518",
+      "PO Received": "135960983",
+      "Closed Won": "closedwon",
+      "Closed Lost": "closedlost",
+      "Parked/Revisit": "1214475888",
+      "unmapped_early_verify": "3879394040"
+    },
+    "other_pipelines_note": "Consortium (2365820611), Renewals-Testing (2366316271), OOS (67437740), NB-Testing (41834638) use the same labels with pipeline-specific stage IDs. Re-pull from REST /crm/v3/pipelines/deals before trusting. OOS stage IDs are unreliable via the API."
   },
+  "exclusion_rules": [
+    {"rule": "Testing deal type", "condition": "dealtype = 'Testing' OR dealname starts with 'Testing:'", "reason": "Sandbox/test records (e.g. Canyon ISD $17K, Splendora ISD $7.8K, Testing: Abilene $61K). Excluded from ALL calculations including banked."},
+    {"rule": "Testing/Sandbox pipelines", "condition": "pipeline IN (New Business-Testing 41834638, Renewals-Testing 2366316271)", "reason": "Entire pipeline is non-real. Excluded from banked and forecast."},
+    {"rule": "Parked/Revisit stage", "condition": "dealstage = Parked/Revisit (0% weight)", "reason": "Deliberately deferred (REVISIT AFTER SEPT 2026), contingent on V1->V2 migration parity. Not at-risk, not lost. Killeen, Belton, Argyle, Dalhart, Temple (~$78,734). Excluded from open pipeline AND weighted forecast; shown separately."},
+    {"rule": "Closed Lost / churned", "condition": "dealstage = Closed Lost", "reason": "Lost. Excluded from open and banked. This cycle: Dripping Springs $15,694, New Braunfels $8,899, Smithville $2,751."},
+    {"rule": "FY27 out-of-window", "condition": "closedate >= 2026-09-01", "reason": "Real book but outside the $1M-by-Sept-1 window. Excluded from in-window/best-case math (Utah $1,312,622, Levy $15,000). Still shown in total open book."},
+    {"rule": "ESC consortium pipeline", "condition": "pipeline = Renewals-Consortium 2365820611", "reason": "$0 consortium child districts; separate structure decision. Excluded from the three dashboards."},
+    {"rule": "Stale/junk OOS deals", "condition": "known abandoned/$2 test records in OOS", "reason": "Jefferson County FL ($1,500 abandoned), Jefferson Monticello / Wyoming City / McAlester ($2 test deals). Excluded."},
+    {"rule": "Duplicate records", "condition": "multiple records for same district", "reason": "e.g. Jefferson County FL had two records ($2 and $1,500) — keep canonical, exclude dupe. [DUPE]-tagged deals are auto-created without dedup by the Hubspot_Code_MCP app + 'RENEWAL Deal Creation' workflow."},
+    {"rule": "$0 amount", "condition": "amount = 0", "reason": "Review case-by-case. Some $0 are VALID (Krum ISD $0 is intentional — former founder, never flag as a gap; consortium $0 districts are valid customers). $0 deals contribute $0 to weighted/banked math regardless, so they do not distort totals."}
+  ],
   "calculations": {
-    "PENDING": "To be confirmed by Jan's Claude",
-    "banked_revenue": "TBC",
-    "weighted_forecast": "TBC",
-    "best_case": "TBC",
-    "total_pipeline": "TBC"
+    "banked_revenue": {
+      "formula": "SUM(amount) WHERE dealstage = 'Closed Won' AND closedate >= 2025-09-01, across all real revenue pipelines (excludes Testing pipelines and any Testing: deals).",
+      "value_2026_06_22": 379297,
+      "includes": "Conroe 3-Yr multi-year Year-1 ($206,785 — ~55% of banked), plus all other Closed-Won since 2025-09-01.",
+      "notes": "Banked = 'in the bank', the headline goal metric. No weighting applied (already won = 100%)."
+    },
+    "weighted_forecast": {
+      "formula": "Banked + SUM(open_deal.amount * stage_weight) for all open deals across included pipelines.",
+      "value_2026_06_22": 738991,
+      "notes": "The 'working number'. Each open deal counted at the win-probability of its current stage — no manual overrides."
+    },
+    "high_confidence_floor": {
+      "formula": "Banked + (Committed + PO Received open deals * their stage weight).",
+      "value_2026_06_22": 464529,
+      "notes": "Only the most advanced open stages contribute."
+    },
+    "best_case": {
+      "formula": "Banked + SUM(open_deal.amount) for every open deal whose closedate < 2026-09-01 (counted at 100%, NOT weighted).",
+      "value_2026_06_22": 1287674,
+      "notes": "$908,377 of open pipeline had an in-window close date on 2026-06-22. Deals with no close date (Copperas Cove, Erath Excels) CANNOT be placed in best-case."
+    },
+    "ceiling": {
+      "formula": "Banked + ALL open pipeline at 100% (no weighting, no date filter).",
+      "value_2026_06_22": 1441843,
+      "notes": "Theoretical max if everything open closes."
+    },
+    "total_pipeline_open": {
+      "formula": "SUM(open_deal.amount) across included pipelines, excluding Parked/Revisit.",
+      "value_2026_06_22": 1062546,
+      "notes": "Excludes the $1,327,622 FY27 OOS book from the headline; total open book incl. all OOS = $2,396,316."
+    },
+    "weighted_open": {
+      "formula": "SUM(open_deal.amount * stage_weight). Equals weighted_forecast minus banked.",
+      "value_2026_06_22": 359694
+    },
+    "gap_to_1m": {
+      "formula": "1000000 - Banked",
+      "value_2026_06_22": 620703
+    }
   },
-  "refresh_schedule": {
-    "frequency": "daily",
-    "time": "06:00 CT",
-    "owner": "Zig"
+  "edge_cases": {
+    "conroe_multi_year": "Conroe ISD signed a 3-year deal ($206,784.60). Year-1 is Closed-Won and counts in banked (~55% of it). Year-2/Year-3 are PO-tracking deals in the 27/28 pipeline (Year 2 id 323074610930), NOT real renewals — do not treat as at-risk. Classified as dealtype = Renewal (no separate Multi-Year type).",
+    "zero_dollar_consortium": "Valid customers, not gaps. ~59 active $0 ESC 9/15/16 districts have no 26/27 deal — a structure decision, not an error. Contribute $0 to math.",
+    "krum_zero": "Krum ISD $0 renewal is INTENTIONAL (former founder). Never flag as a data gap.",
+    "renewal_pricing_conservative": "Renewal amounts intentionally NOT bumped to $3/student. Pricing undecided ($1.50/$2/$3). Do not propose bulk amount update.",
+    "banked_vs_inflight": "Banked = Closed Won since 2025-09-01 (100%, in the bank). In-flight = open deals, counted at stage weight for weighted forecast or at 100% for best-case if in-window.",
+    "no_close_date": "Open deals with no closedate (Copperas Cove $11,642, Erath Excels $170) are in weighted forecast but CANNOT enter best-case (pre-Sept-1) math. Set close dates in HubSpot.",
+    "date_conventions_renewals": "contract_start = previous closedwon contract_end + 1 day; contract_end = contract_start + 1 year (minus 1 day); closedate = day before contract_start."
+  },
+  "data_quality_flags_2026_06_24": [
+    "Unmapped stage 3879394040 (NB-Texas): Tomball, San Benito, Lovejoy (~$22K) — provisional 20%, fix stage in HubSpot.",
+    "Stage-ID reuse from restructure silently relabeled 5 active NB-Texas deals into Parked/Revisit (1214475888, old 'Ready for Quote'): Northside $25K, Carrollton-Farmers Branch $22K, Harlingen $15K, Waco $12K, Granbury $7K — should be Decision-Maker Buy-In.",
+    "2 renewals tagged 'Testing': Canyon ISD $17K, Splendora ISD $7.8K — exclude.",
+    "2 renewals with no close date: Copperas Cove, Erath Excels.",
+    "Krum renewal $0 — valid, do not flag.",
+    "OOS stage IDs unreliable via API — all 3 real deals forced to earliest stage label.",
+    "'Quote Requested' stage added 2026-06-24 — weighting unresolved."
+  ],
+  "refresh_process": {
+    "current": "Manual. Jan asks her Claude Desktop to pull live HubSpot data via the HubSpot MCP and rebuild the three HTML dashboards on demand (typically before pipeline/renewal meetings). No fixed schedule; triggered by Jan. Weekly Thursday renewals report to Steve + Michelle (cashflow focus, lead with Committed + banked).",
+    "target": "Zig runs a daily cron at 06:00 CT, pulls HubSpot, applies this config, writes data/sales-data.json, auto-publishes docs/index.html, writes CHANGELOG, updates Confluence."
+  },
+  "output_locations": {
+    "current_html_dashboards_repo": "bookmarked-os repo, claude-output/reports/",
+    "current_files_2026_06_22_to_24": [
+      "claude-output/reports/forecast-dashboard-2026-06-22.html (+ .pdf, .print.html)",
+      "claude-output/reports/jan-deal-working-dashboard-2026-06-22.html (+ .pdf, .print.html)",
+      "claude-output/reports/renewals-meeting-dashboard-2026-06-22.html (+ .pdf, .print.html)",
+      "claude-output/reports/renewals-meeting-dashboard-2026-06-24.html (+ .pdf)"
+    ],
+    "confluence_parent_page": "https://bookmarked-team.atlassian.net/wiki/spaces/SH/pages/155222017",
+    "future": "This repo: data/sales-data.json (data), docs/index.html (GitHub Pages dashboard)."
+  },
+  "design_tokens": {
+    "primary_color": "#12A38C",
+    "background": "#f9f7f2",
+    "text": "#101828",
+    "fonts": "DM Sans (body), DM Serif Display (headings), DM Mono (numbers)",
+    "source_of_truth": "bookmarked-os repo: claude-output/design/bookmarked-brand.css (CEO-locked; do not improvise styling)"
   }
 }
