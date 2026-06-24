@@ -11,7 +11,7 @@
 
 The single source of truth for Bookmarked sales pipeline data. Pulls live from HubSpot daily. Replaces manual Confluence dashboard updates. Accessible to the full team via the URL above.
 
-This repo is also linked into Steve's Founder Cockpit (Sales tab).
+This dashboard is also surfaced in Bookmarked's internal reporting tools.
 
 ---
 
