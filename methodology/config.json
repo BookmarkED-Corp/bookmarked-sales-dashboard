@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "last_updated": "PENDING — to be populated by Jan's Claude",
+  "owner": "Zig — CRO Agent",
+  "pipelines": {
+    "new_business_texas": {
+      "pipeline_id": "default",
+      "name": "New Business — Texas",
+      "include": true,
+      "notes": "Primary Texas new business pipeline"
+    },
+    "renewals_2627": {
+      "pipeline_id": "798674460",
+      "name": "26/27 Renewals",
+      "include": true,
+      "notes": "All renewal deals for 26/27 school year"
+    },
+    "new_business_out_of_state": {
+      "pipeline_id": "67437740",
+      "name": "New Business — Out of State",
+      "include": true,
+      "notes": "Non-Texas new business. NOTE: Utah SEA ($1.3M) parked here — not working pipeline"
+    }
+  },
+  "stage_weightings": {
+    "PENDING": "To be confirmed by Jan's Claude — do not use defaults until confirmed",
+    "known_weightings": {
+      "qualifying": 0.10,
+      "v2_review_demo": 0.35,
+      "decision_maker_buyin": 0.50,
+      "quote_sent": 0.65,
+      "committed": 0.80,
+      "po_received": 0.90,
+      "closed_won": 1.0,
+      "closed_lost": 0.0,
+      "parked_revisit": 0.0,
+      "quote_requested": "PENDING — new stage added 2026-06-24, weighting TBC with Jan"
+    }
+  },
+  "exclusion_rules": {
+    "PENDING": "To be confirmed by Jan's Claude",
+    "known_exclusions": [
+      "dealtype = Testing",
+      "amount = $0 (review case by case — some $0 are valid consortium deals)",
+      "Utah SEA deal — parked, not working pipeline, exclude from weighted forecast",
+      "Duplicate deals (e.g. Jefferson County FL has two records — confirm which is canonical)"
+    ]
+  },
+  "calculations": {
+    "PENDING": "To be confirmed by Jan's Claude",
+    "banked_revenue": "TBC",
+    "weighted_forecast": "TBC",
+    "best_case": "TBC",
+    "total_pipeline": "TBC"
+  },
+  "refresh_schedule": {
+    "frequency": "daily",
+    "time": "06:00 CT",
+    "owner": "Zig"
+  }
+}

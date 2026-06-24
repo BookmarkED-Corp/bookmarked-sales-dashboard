@@ -1,0 +1,15 @@
+{
+  "last_updated": "PENDING",
+  "generated_by": "Zig — CRO Agent",
+  "pipelines": {},
+  "summary": {
+    "banked_revenue": null,
+    "weighted_forecast": null,
+    "best_case": null,
+    "total_pipeline": null,
+    "total_deals_active": null,
+    "as_of_date": null
+  },
+  "deals": [],
+  "note": "This file is auto-generated daily by Zig. Do not edit manually."
+}
