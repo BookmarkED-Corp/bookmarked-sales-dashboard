@@ -139,11 +139,12 @@
       "recommendation": "Quote Requested logically sits between Decision-Maker Buy-In (0.50) and Quote Sent (0.65) — a customer has asked for a quote but it has not yet been sent. Suggest ~0.55–0.60 pending Jan's decision. Do NOT apply a weight until Jan confirms. Jan's existing dashboards (through 2026-06-24) do not yet use this stage."
     },
     "divergence_flag": {
-      "issue": "Jan's dashboard weights differ from the live win-probabilities Zig set inside HubSpot during the 2026-06-22 restructure.",
+      "status": "RESOLVED — Jan ratified the dashboard weights as canonical, 2026-06-24.",
+      "decision": "weights_by_stage_label above (0.10 / 0.35 / 0.50 / 0.65 / 0.80 / 0.90 / 1.00 / 0.00 / 0.00) are CANONICAL. They produced the published $738,991 weighted forecast.",
       "jan_dashboard_weights": "0.10 / 0.35 / 0.50 / 0.65 / 0.80 / 0.90 / 1.00 / 0.00 / 0.00",
-      "zig_hubspot_win_probs": "0.10 / 0.25 / 0.40 / 0.60 / 0.85 / 0.95 / 1.00 / 0.00 / 0.10",
+      "zig_hubspot_win_probs_to_be_overwritten": "0.10 / 0.25 / 0.40 / 0.60 / 0.85 / 0.95 / 1.00 / 0.00 / 0.10",
       "stage_order": "Qualifying / V2 Review/Demo / Decision-Maker Buy-In / Quote Sent / Committed / PO Received / Closed Won / Closed Lost / Parked/Revisit",
-      "resolution": "These tables MUST be reconciled before Zig automates, or banked+weighted numbers will not match Jan's published dashboards. Jan's dashboard table (this config) is what produced the published $738,991 weighted forecast. Recommend Zig either (a) adopt Jan's dashboard weights as canonical, or (b) get Jan to ratify the HubSpot win-probs and re-baseline. Flag to Jan via Slack."
+      "action_for_zig": "Set HubSpot's stage win-probabilities (hs_deal_stage_probability) to MATCH the canonical dashboard weights — do NOT adopt the current stored HubSpot probs. The dashboard is the source of truth for weights; HubSpot must be aligned to it. Apply across all 6 revenue pipelines (stage-ID maps in stage_ids_by_pipeline). Do not re-baseline the forecast to the lower HubSpot probs."
     }
   },
   "stage_ids_by_pipeline": {

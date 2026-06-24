@@ -92,16 +92,16 @@ The 6 revenue pipelines share the same 9-stage spine (labels + order). **Jan's C
 
 **Consortium `2365820611`, Renewals-Testing `2366316271`, OOS `67437740`, NB-Testing `41834638`:** same labels, pipeline-specific IDs — re-pull from REST. **OOS stage IDs are unreliable via the API**, so all 3 real OOS deals are shown at the earliest stage ("Qualifying (OOS — verify)").
 
-### ⚠️ OPEN ITEM 1 — Weight divergence (must reconcile before automating)
+### ✅ RESOLVED — Weight divergence (Jan ratified dashboard weights, 2026-06-24)
 
-Jan's dashboards and HubSpot's stored win-probs are **not the same**:
+Jan's dashboards and HubSpot's stored win-probs were **not the same**:
 
 | | Qual | V2 | DM | Quote | Committed | PO | Won | Lost | Parked |
 |---|---|---|---|---|---|---|---|---|---|
-| **Jan's dashboard (canonical here)** | 10% | 35% | 50% | 65% | 80% | 90% | 100% | 0% | 0% |
-| Zig's HubSpot win-probs (6/22) | 10% | 25% | 40% | 60% | 85% | 95% | 100% | 0% | 10% |
+| **Jan's dashboard — CANONICAL** | 10% | 35% | 50% | 65% | 80% | 90% | 100% | 0% | 0% |
+| HubSpot stored probs (6/22) — to be overwritten | 10% | 25% | 40% | 60% | 85% | 95% | 100% | 0% | 10% |
 
-The published **$738,991 weighted forecast** was produced with **Jan's dashboard weights** (this document). Zig must either adopt these weights as canonical or get Jan to ratify the HubSpot win-probs and re-baseline — otherwise automated numbers will not match Jan's published dashboards. **Flag to Jan via Slack.**
+**Decision (Jan, 2026-06-24):** keep the **dashboard weights** as canonical — they produced the published **$738,991 weighted forecast**. **Action for Zig:** set HubSpot's `hs_deal_stage_probability` on every stage to **match the dashboard weights** across all 6 revenue pipelines. Do **not** adopt the lower stored HubSpot probs and do **not** re-baseline the forecast to them. The dashboard table is the source of truth; HubSpot gets aligned to it.
 
 ### ⚠️ OPEN ITEM 2 — "Quote Requested" stage (added 2026-06-24)
 
