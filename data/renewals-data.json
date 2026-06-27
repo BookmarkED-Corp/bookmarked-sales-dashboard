@@ -1,0 +1,609 @@
+{
+  "generated_at": "2026-06-26T18:00:00-05:00",
+  "pipeline": "26/27 Renewals",
+  "pipeline_id": "798674460",
+  "headline": {
+    "banked": {
+      "amount": 16773.5,
+      "deals": 4
+    },
+    "committed_80pct": {
+      "amount": 131302.0,
+      "deals": 11
+    },
+    "quote_sent_65pct": {
+      "amount": 9136.0,
+      "deals": 2
+    },
+    "high_probability_total": 157211.5,
+    "weighted_forecast_open": 166797.91,
+    "open_pipeline": {
+      "face_value": 427104.0,
+      "deals": 47
+    },
+    "parked": {
+      "amount": 78733.5,
+      "deals": 5
+    }
+  },
+  "by_stage": {
+    "Qualifying": {
+      "deals": 24,
+      "subtotal": 187563.5,
+      "weighted": 18756.35
+    },
+    "V2 Review/Demo": {
+      "deals": 6,
+      "subtotal": 83264.5,
+      "weighted": 29142.56
+    },
+    "Decision-Maker Buy-In": {
+      "deals": 4,
+      "subtotal": 15838.0,
+      "weighted": 7919.0
+    },
+    "Quote Sent": {
+      "deals": 2,
+      "subtotal": 9136.0,
+      "weighted": 5938.4
+    },
+    "Committed": {
+      "deals": 11,
+      "subtotal": 131302.0,
+      "weighted": 105041.6
+    }
+  },
+  "cash_projection_by_month": {
+    "2026-06": {
+      "deals": 1,
+      "amount": 810.0,
+      "districts": [
+        "Fayetteville"
+      ]
+    },
+    "2026-07": {
+      "deals": 5,
+      "amount": 119099.0,
+      "districts": [
+        "Midland ISD",
+        "Elgin ISD",
+        "San Marcos 26-27 Renewal",
+        "La Grange ISD",
+        "Bruceville-Eddy ISD - Renewal for 26-27"
+      ]
+    },
+    "2026-08": {
+      "deals": 3,
+      "amount": 7373.0,
+      "districts": [
+        "Glen Rose ISD",
+        "NTCA (North Tx Collegiate Academy) ",
+        "Olney ISD"
+      ]
+    },
+    "2026-09": {
+      "deals": 1,
+      "amount": 1176.0,
+      "districts": [
+        "Midland Academy Charter School"
+      ]
+    },
+    "2026-10": {
+      "deals": 1,
+      "amount": 2844.0,
+      "districts": [
+        "Presidio ISD"
+      ]
+    }
+  },
+  "banked_deals": [
+    {
+      "name": "26/27 RENEWAL | Red Oak ISD",
+      "amount": 12032.0,
+      "stage_name": "Closed Won",
+      "weight": 1.0,
+      "weighted": 12032.0,
+      "close_date": "2026-06-16",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "San Saba ISD - Renewal for 26-27 School Year",
+      "amount": 2173.5,
+      "stage_name": "Closed Won",
+      "weight": 1.0,
+      "weighted": 2173.5,
+      "close_date": "2026-06-15",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "Mason ISD - Renewal 26-27",
+      "amount": 1962.0,
+      "stage_name": "Closed Won",
+      "weight": 1.0,
+      "weighted": 1962.0,
+      "close_date": "2026-05-30",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Dodd City ISD",
+      "amount": 606.0,
+      "stage_name": "Closed Won",
+      "weight": 1.0,
+      "weighted": 606.0,
+      "close_date": "2026-05-21",
+      "owner": "Teela Watson"
+    }
+  ],
+  "parked_deals": [
+    {
+      "name": "26/27 RENEWAL | Killeen ISD",
+      "amount": 39073.0,
+      "stage_name": "Parked/Revisit",
+      "weight": 0.0,
+      "weighted": 0.0,
+      "close_date": "2026-09-30",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | Belton ISD",
+      "amount": 24982.0,
+      "stage_name": "Parked/Revisit",
+      "weight": 0.0,
+      "weighted": 0.0,
+      "close_date": "2026-09-30",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | Argyle ISD",
+      "amount": 9444.0,
+      "stage_name": "Parked/Revisit",
+      "weight": 0.0,
+      "weighted": 0.0,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "RENEWAL | Dalhart ISD - 1M Students",
+      "amount": 3276.0,
+      "stage_name": "Parked/Revisit",
+      "weight": 0.0,
+      "weighted": 0.0,
+      "close_date": "2026-07-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Temple ISD",
+      "amount": 1958.5,
+      "stage_name": "Parked/Revisit",
+      "weight": 0.0,
+      "weighted": 0.0,
+      "close_date": "2026-09-30",
+      "owner": "Jan Gilboy"
+    }
+  ],
+  "open_deals": [
+    {
+      "name": "Midland ISD - 26/27 Renewal",
+      "amount": 77409.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 61927.2,
+      "close_date": "2026-07-15",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Humble ISD",
+      "amount": 72385.5,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 7238.55,
+      "close_date": "2026-07-31",
+      "owner": "Steve Wandler"
+    },
+    {
+      "name": "26/27 RENEWAL | Mesquite ISD",
+      "amount": 56821.5,
+      "stage_name": "V2 Review/Demo",
+      "weight": 0.35,
+      "weighted": 19887.52,
+      "close_date": "2026-07-31",
+      "owner": "Steve Wandler"
+    },
+    {
+      "name": "26/27 RENEWAL | ILTEXAS",
+      "amount": 42326.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 4232.6,
+      "close_date": "2026-08-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | Elgin ISD",
+      "amount": 18402.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 14721.6,
+      "close_date": "2026-07-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | Canyon ISD",
+      "amount": 17248.5,
+      "stage_name": "V2 Review/Demo",
+      "weight": 0.35,
+      "weighted": 6036.97,
+      "close_date": "2026-07-31",
+      "owner": "Steve Wandler"
+    },
+    {
+      "name": "San Marcos 26-27 Renewal ",
+      "amount": 16100.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 12880.0,
+      "close_date": "2026-07-17",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | BEAUMONT ISD",
+      "amount": 14399.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 1439.9,
+      "close_date": "2026-07-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | Copperas Cove ISD",
+      "amount": 11641.5,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 1164.15,
+      "close_date": "2026-06-30",
+      "owner": "Natasha Flanders"
+    },
+    {
+      "name": "26/27 RENEWAL | Splendora ISD",
+      "amount": 7831.5,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 783.15,
+      "close_date": "2026-06-30",
+      "owner": "Natasha Flanders"
+    },
+    {
+      "name": "TEXAS LEADERSHIP PUBLIC SCHOOLS - 25/26 Renewal",
+      "amount": 7492.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 749.2,
+      "close_date": "2026-07-31",
+      "owner": "Natasha Flanders"
+    },
+    {
+      "name": "26/27 RENEWAL | Alvarado ISD",
+      "amount": 6445.0,
+      "stage_name": "Quote Sent",
+      "weight": 0.65,
+      "weighted": 4189.25,
+      "close_date": "2026-07-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | Baker County, FL",
+      "amount": 6000.0,
+      "stage_name": "Decision-Maker Buy-In",
+      "weight": 0.5,
+      "weighted": 3000.0,
+      "close_date": "2026-11-30",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Ferris ISD",
+      "amount": 5746.0,
+      "stage_name": "Decision-Maker Buy-In",
+      "weight": 0.5,
+      "weighted": 2873.0,
+      "close_date": "2026-08-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | La Grange ISD",
+      "amount": 5550.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 4440.0,
+      "close_date": "2026-07-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | NORTH EAST ISD",
+      "amount": 5000.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 500.0,
+      "close_date": "2026-08-31",
+      "owner": "Natasha Flanders"
+    },
+    {
+      "name": "26/27 RENEWAL | Glen Rose ISD",
+      "amount": 4186.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 3348.8,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "Brock ISD - 26/27 Renewal (previous pilot)",
+      "amount": 4092.0,
+      "stage_name": "Decision-Maker Buy-In",
+      "weight": 0.5,
+      "weighted": 2046.0,
+      "close_date": "2026-07-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "25/26 RENEWAL | San Elizario ISD",
+      "amount": 4051.5,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 405.15,
+      "close_date": "2026-07-15",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Greene County, GA",
+      "amount": 3870.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 387.0,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Connally ISD",
+      "amount": 3433.5,
+      "stage_name": "V2 Review/Demo",
+      "weight": 0.35,
+      "weighted": 1201.72,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Llano ISD",
+      "amount": 2913.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 291.3,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "RENEWAL 26-27 | Presidio ISD ",
+      "amount": 2844.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 2275.2,
+      "close_date": "2026-10-01",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Childress ISD",
+      "amount": 2751.0,
+      "stage_name": "V2 Review/Demo",
+      "weight": 0.35,
+      "weighted": 962.85,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "Henrietta ISD - Renewal 26/27 ",
+      "amount": 2691.0,
+      "stage_name": "Quote Sent",
+      "weight": 0.65,
+      "weighted": 1749.15,
+      "close_date": "2026-08-01",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | Troy ISD",
+      "amount": 2559.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 255.9,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "RENEWAL | Holliday ISD",
+      "amount": 2156.0,
+      "stage_name": "V2 Review/Demo",
+      "weight": 0.35,
+      "weighted": 754.6,
+      "close_date": "2026-07-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "RENEWAL 26-27 | Renewal | Eastland ISD",
+      "amount": 1936.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 193.6,
+      "close_date": "2026-06-30",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "NTCA (North Tx Collegiate Academy) -26/27 Renewal",
+      "amount": 1899.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 1519.2,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Blue Ridge ISD",
+      "amount": 1876.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 187.6,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "Bruceville-Eddy ISD - Renewal for 26-27",
+      "amount": 1638.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 1310.4,
+      "close_date": "2026-07-10",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Thrall ISD",
+      "amount": 1612.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 161.2,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Cisco ISD",
+      "amount": 1524.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 152.4,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Tornillo ISD",
+      "amount": 1408.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 140.8,
+      "close_date": "2026-07-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "RENEWAL | RENEWAL | FORSAN ISD - New Deal",
+      "amount": 1398.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 139.8,
+      "close_date": "2026-07-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Olney ISD",
+      "amount": 1288.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 1030.4,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Mildred ISD",
+      "amount": 1255.5,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 125.55,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "RENEWAL 26-27 | Midland Academy Charter School",
+      "amount": 1176.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 940.8,
+      "close_date": "2026-09-01",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "25/26 RENEWAL | Priority Charter Schools",
+      "amount": 854.0,
+      "stage_name": "V2 Review/Demo",
+      "weight": 0.35,
+      "weighted": 298.9,
+      "close_date": "2026-06-30",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Plemons-Stinnett-Phillips ISD",
+      "amount": 846.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 84.6,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "Fayetteville - 26/27 Renewal",
+      "amount": 810.0,
+      "stage_name": "Committed",
+      "weight": 0.8,
+      "weighted": 648.0,
+      "close_date": "2026-06-30",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Wildorado ISD",
+      "amount": 322.5,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 32.25,
+      "close_date": "2026-07-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | Miami ISD",
+      "amount": 297.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 29.7,
+      "close_date": "2026-07-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "26/27 RENEWAL | Follett ISD",
+      "amount": 258.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 25.8,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Channing ISD",
+      "amount": 192.0,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 19.2,
+      "close_date": "2026-07-31",
+      "owner": "Jan Gilboy"
+    },
+    {
+      "name": "Erath Excels Academy - 26/27 Renewal",
+      "amount": 169.5,
+      "stage_name": "Qualifying",
+      "weight": 0.1,
+      "weighted": 16.95,
+      "close_date": "2026-06-30",
+      "owner": "Teela Watson"
+    },
+    {
+      "name": "26/27 RENEWAL | Krum ISD",
+      "amount": 0.0,
+      "stage_name": "Decision-Maker Buy-In",
+      "weight": 0.5,
+      "weighted": 0.0,
+      "close_date": "2026-08-31",
+      "owner": "Teela Watson"
+    }
+  ]
+}
